@@ -13,6 +13,7 @@ function mostrarTareas() {
     const lista = `<li>${tarea}</li>`;
     listaDeTareas.innerHTML += lista;
   });
+  totalTareas.textContent = `Total de tareas: ${tareas.length}`;
 }
 
 mostrarTareas();
