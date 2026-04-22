@@ -6,3 +6,13 @@ const tareasRealizadas = document.querySelector(".tareasRealizadas");
 const listaDeTareas = document.querySelector(".listaDeTareas");
 
 const tareas = ["Revisar correos", "Hacer ejercicio", "Comprar alimentos"];
+
+function mostrarTareas() {
+  listaDeTareas.innerHTML = "";
+  tareas.forEach((tarea) => {
+    const lista = `<li>${tarea}</li>`;
+    listaDeTareas.innerHTML += lista;
+  });
+}
+
+mostrarTareas();
