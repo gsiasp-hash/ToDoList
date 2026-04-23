@@ -10,7 +10,7 @@ const tareas = ["Revisar correos", "Hacer ejercicio", "Comprar alimentos"];
 function mostrarTareas() {
   listaDeTareas.innerHTML = "";
   tareas.forEach((tarea, index) => {
-    const lista = `<li>${index + 1} ${tarea} <input type="checkbox" name="" class="tareaRealizada" id="${index}" /><i class="fa-solid fa-x eliminarTarea" id="${index}"></i></li>`;
+    const lista = `<li><span class="idTarea">${index + 1} </span> <span class="tarea">${tarea}</span> <input type="checkbox" name="" class="tareaRealizada" id="${index}" /><i class="fa-solid fa-x eliminarTarea" id="${index}"></i></li>`;
     listaDeTareas.innerHTML += lista;
   });
   totalTareas.textContent = ` ${tareas.length}`;
