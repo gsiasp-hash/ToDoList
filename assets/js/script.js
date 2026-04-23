@@ -9,11 +9,21 @@ const tareas = ["Revisar correos", "Hacer ejercicio", "Comprar alimentos"];
 
 function mostrarTareas() {
   listaDeTareas.innerHTML = "";
-  tareas.forEach((tarea) => {
-    const lista = `<li>${tarea}</li>`;
+  tareas.forEach((tarea, index) => {
+    const lista = `<li>${index + 1} ${tarea} <input type="checkbox" name="" class="tareaRealizada" id="${index}" /><i class="fa-solid fa-x eliminarTarea" id="${index}"></i></li>`;
     listaDeTareas.innerHTML += lista;
   });
-  totalTareas.textContent = `Total de tareas: ${tareas.length}`;
+  totalTareas.textContent = ` ${tareas.length}`;
+}
+
+agregarTarea.addEventListener("click", agregarNuevaTareas);
+function agregarNuevaTareas() {
+  const tarea = nuevaTarea.value;
+  if (tarea) {
+    tareas.push(tarea);
+    nuevaTarea.value = "";
+    mostrarTareas();
+  }
 }
 
 mostrarTareas();
