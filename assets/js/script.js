@@ -12,27 +12,25 @@ function mostrarTareas() {
   tareas.forEach((tarea, index) => {
     const lista = `<li><span class="idTarea">${index + 1} </span> <span class="tarea">${tarea}</span> <input type="checkbox" name="" class="tareaRealizada" id="${index + 1}" /><i class="fa-solid fa-x eliminarTarea" id="${index + 1}"></i></li>`;
     listaDeTareas.innerHTML += lista;
-    
   });
   totalTareas.textContent = ` ${tareas.length}`;
 }
 
-function agregarNuevaTareas() {
-  const tarea = nuevaTarea.value;
-  if (tarea) {
-    tareas.push(tarea);
-    nuevaTarea.value = "";
-    mostrarTareas();
-  }
-}
+mostrarTareas();
 
 listaDeTareas.addEventListener("change", () => {
   const tareasRealizadasCount = document.querySelectorAll(
     ".tareaRealizada:checked",
   ).length;
   tareasRealizadas.textContent = ` ${tareasRealizadasCount}`;
+  tarea.classList.toggle("tareaRealizada", tareaRealizada.checked);
 });
 
-mostrarTareas();
-
-agregarTarea.addEventListener("click", agregarNuevaTareas);
+agregarTarea.addEventListener("click", () => {
+  const tarea = nuevaTarea.value;
+  if (tarea) {
+    tareas.push(tarea);
+    nuevaTarea.value = "";
+    mostrarTareas();
+  }
+});
