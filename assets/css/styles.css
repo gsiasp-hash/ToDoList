@@ -92,3 +92,6 @@ li {
   grid-template-columns: 1fr 3fr 1fr 1fr;
   align-items: center;
 }
+.tareaLista{
+  text-decoration: line-through;
+}
