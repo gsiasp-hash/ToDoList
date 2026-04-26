@@ -25,7 +25,6 @@ const crearTarea = (name) => {
 //agregando una nueva tarea al arreglo de tareas
 const addTarea = () => {
   nombreTarea = nuevaTarea.value.trim();
-  return;
   const tarea = crearTarea(nombreTarea);
   tareas.push(tarea);
   nuevaTarea.value = "";
